@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<form>
+    Enter the First Number<input type="number" id="n1"><br>
+    Enter the Second Number<input type="number" id="n2"><br>
+    <button type="button" onclick="Add()">ADD</button>
+    <button type="button" onclick="Sub()">SUB</button>
+    <button type="button" onclick="Mul()">MUL</button>
+    <button type="button" onclick="Div()">DIV</button><br>
+    <h1 id="result"></h1>
+</form>
+
+<script>
+function Add() {
+    let a = Number(document.getElementById("n1").value);
+    let b = Number(document.getElementById("n2").value);
+    document.getElementById("result").innerHTML = a + b;
+}
+
+function Sub() {
+    let a = Number(document.getElementById("n1").value);
+    let b = Number(document.getElementById("n2").value);
+    document.getElementById("result").innerHTML = a - b;
+}
+
+function Mul() {
+    let a = Number(document.getElementById("n1").value);
+    let b = Number(document.getElementById("n2").value);
+    document.getElementById("result").innerHTML = a * b;
+}
+
+function Div() {
+    let a = Number(document.getElementById("n1").value);
+    let b = Number(document.getElementById("n2").value);
+
+    if (b === 0) {
+        alert("Division by zero is not allowed");
+        return;
+    }
+    document.getElementById("result").innerHTML = a / b;
+}
+</script>
+
+</body>
+</html>

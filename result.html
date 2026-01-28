@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+<form>
+    <h2>College Results</h2>
+    <input type="text" id="num" placeholder="Enter the Reg no">
+    <button type="button" onclick="showresults()">Get Results</button>
+    <p id="result"></p>
+    <button type="reset">Clear</button>
+</form>
+<script>
+function showresults() {
+    const student = [
+        { reg:101, name:"Narasimha", IP:90, Result:"PASS" },
+        { reg:102, name:"Bhuma", IP:50, Result:"PASS" },
+        { reg:103, name:"Venkat", IP:20, Result:"FAIL" },
+        { reg:104, name:"Mounika", IP:100, Result:"PASS" },
+        { reg:105, name:"Lakshmi", IP:95, Result:"PASS" }
+    ];
+    let regno = document.getElementById("num").value;
+    for (let i = 0; i < student.length; i++) {
+        if (student[i].reg == regno) {
+            document.getElementById("result").innerHTML ="Name: "+student[i].name +"<br>"+"Marks: "+student[i].IP+"<br>"+"Result: "+student[i].Result;
+            return;
+        }
+    }
+}
+</script>
+</body>
+</html>

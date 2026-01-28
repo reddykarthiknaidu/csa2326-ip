@@ -1,0 +1,17 @@
+<?php
+session_start();
+$conn = mysqli_connect("localhost","root","","workforce");
+
+$user = $_POST['username'];
+$pass = $_POST['password'];
+
+$sql = "SELECT * FROM users WHERE username='$user' AND password='$pass'";
+$result = mysqli_query($conn,$sql);
+
+if(mysqli_num_rows($result)==1){
+  $_SESSION['user']=$user;
+  header("Location: dashboard.php");
+}else{
+  echo "Invalid Login";
+}
+?>

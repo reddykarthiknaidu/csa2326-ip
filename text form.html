@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body style="background-color: lightgreen;">
+<form>
+<font size="6" color="skyblue">
+<b>name:</b><input type="text" id="name">
+
+</font>
+<button onclick="displayName()">Submit</button>
+<div id="output"></div>
+</form>
+
+<script>
+  function displayName() {
+    var name = document.getElementById("name").value;
+    var output = "";
+    for (var i = 0; i < 6; i++) {
+      output += "<p>" + name + "</p>";
+    }
+    document.getElementById("output").innerHTML = output;
+  }
+</script>
+
+</body>
+</html>
